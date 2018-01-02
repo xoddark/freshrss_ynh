@@ -6,10 +6,10 @@ APPNAME="freshrss"
 VERSION="1.9.0"
 
 # FreshRSS complete tarball checksum
-FRESHRSS_SOURCE_SHA256="9bdff002f6f8ef7daea1d7fea92c31a57c0d8c204571e3933038eccbe82bf3b4"
+# FRESHRSS_SOURCE_SHA256="9bdff002f6f8ef7daea1d7fea92c31a57c0d8c204571e3933038eccbe82bf3b4"
 
 # Remote URL to fetch FreshRSS source tarball
-FRESHRSS_SOURCE_URL="https://github.com/FreshRSS/FreshRSS/archive/1.9.0.tar.gz"
+FRESHRSS_SOURCE_URL="https://github.com/FreshRSS/FreshRSS/archive/dev.zip"
 
 PKGDIR=$(cd ../; pwd)
 
@@ -28,8 +28,8 @@ extract_freshrss() {
   rc_tarball="${DESTDIR}/freshrss.tar.gz"
   wget -q -O "$rc_tarball" "$FRESHRSS_SOURCE_URL" \
     || ynh_die "Unable to download FreshRSS tarball"
-  echo "$FRESHRSS_SOURCE_SHA256 $rc_tarball" | sha256sum -c >/dev/null \
-    || ynh_die "Invalid checksum of downloaded tarball"
+  # echo "$FRESHRSS_SOURCE_SHA256 $rc_tarball" | sha256sum -c >/dev/null \
+  #   || ynh_die "Invalid checksum of downloaded tarball"
   tar xf "$rc_tarball" -C "$DESTDIR" --strip-components 1 \
     || ynh_die "Unable to extract FreshRss tarball"
   sudo rm "$rc_tarball"
