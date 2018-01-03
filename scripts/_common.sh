@@ -9,7 +9,7 @@ VERSION="1.9.0"
 # FRESHRSS_SOURCE_SHA256="9bdff002f6f8ef7daea1d7fea92c31a57c0d8c204571e3933038eccbe82bf3b4"
 
 # Remote URL to fetch FreshRSS source tarball
-FRESHRSS_SOURCE_URL="https://github.com/FreshRSS/FreshRSS/archive/dev.zip"
+FRESHRSS_SOURCE_URL="https://github.com/FreshRSS/FreshRSS/archive/dev.tar.gz"
 
 PKGDIR=$(cd ../; pwd)
 
